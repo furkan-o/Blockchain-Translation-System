@@ -76,7 +76,7 @@ This contract provides a basic framework for tracking translations (represented 
 * **Off-Chain Data:** The actual translation content is managed off-chain. This contract only verifies the integrity/acceptance of a specific version represented by its hash.
 * **Gas Costs:** Storing strings (hashes) and multiple mappings can incur gas costs. Ensure the design is suitable for your target blockchain and usage patterns.
 
-## Potential Future Improvements
+## To do / Future Improvements
 
 * Add a role system (e.g., Owner/Admin, Translator, Reviewer, Validator).
 * Implement a function to set/update `totalValidators` (restricted to Admin).
