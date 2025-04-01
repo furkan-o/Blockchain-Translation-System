@@ -67,15 +67,6 @@ This contract provides a basic framework for tracking translations (represented 
     * Set the value during contract construction by modifying the constructor (currently implicit and empty).
 4.  **Interact:** Users can then interact with the deployed contract by calling its public functions (`uploadTranslation`, `peerReviewTranslation`, `communityVerifyTranslation`) using a wallet or web3 library.
 
-## Important Considerations & Caveats
-
-* **`totalValidators` Initialization:** The contract is **unusable** for community verification as-is because `totalValidators` is never set. This variable *must* be initialized for the threshold calculation in `communityVerifyTranslation` to be meaningful.
-* **Unused `validatorReputation`:** The `validatorReputation` mapping is declared but never read from or written to in the current logic.
-* **Access Control:** There is no access control on who can call `peerReviewTranslation` or `communityVerifyTranslation`. Any address can act as a peer reviewer (only the first one counts) or a community voter (one vote per address). In a real-world scenario, you would likely want role-based access control (e.g., only registered reviewers can peer review, only registered validators can vote).
-* **Single Peer Reviewer:** The current logic only allows for one peer review action per translation.
-* **Off-Chain Data:** The actual translation content is managed off-chain. This contract only verifies the integrity/acceptance of a specific version represented by its hash.
-* **Gas Costs:** Storing strings (hashes) and multiple mappings can incur gas costs. Ensure the design is suitable for your target blockchain and usage patterns.
-
 ## To do / Future Improvements
 
 * Add a role system (e.g., Owner/Admin, Translator, Reviewer, Validator).
