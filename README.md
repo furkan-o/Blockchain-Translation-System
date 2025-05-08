@@ -2,9 +2,6 @@
 
 [![License: AFL-3.0](https://img.shields.io/badge/License-AFL--3.0-lightgrey.svg)](https://opensource.org/licenses/AFL-3.0)
 
-A Solidity smart contract designed to manage and verify translations through a peer review and community voting process on the blockchain.
-
-Collecting workspace information# Blockchain Translation Verification System
 
 This repository contains a Solidity smart contract for verifying translations in a decentralized manner using blockchain technology.
 
